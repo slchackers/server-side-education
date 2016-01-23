@@ -4,6 +4,14 @@
 	<title>Page</title>
 </head>
 <body>
-	<div><%- reactContent%></div>
+	<div id="mount"><%- reactContent%></div>
+
+	<script src="https://fb.me/react-0.14.6.min.js"></script>
+	<script src="https://fb.me/react-dom-0.14.6.min.js"></script>
+	<script src="/component-web.js"></script>
+	<script>
+		var Component = React.createFactory(RawComponent);
+		ReactDOM.render(Component(),document.getElementById('mount'));
+	</script>
 </body>
 </html>
