@@ -1,11 +1,15 @@
 var express = require('express');
 var React = require('react');
 var ReactDOMServer = require('react-dom/server');
+var path = require('path');
 
 var app = express();
 
+app.set('view engine','ejs');
+
 app.get('/',function(request,response){
-	response.send(ReactDOMServer.renderToString(React.createElement('div',null,'test')));
-});
+	var htmlDOM = React.DOM.div(null,'test');
+	response.render(path.join(__dirname,'index.ejs'),{reactContent:ReactDOMServer.renderToString(htmlDOM)});
+})
 
 app.listen(3000);
