@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --progress --colors --hot --host 0.0.0.0 --port 3000 --content-base dist/"
+    "start": "babel-node src/app.js",
+    "dev": "webpack-dev-server --progress --colors --hot --host 0.0.0.0 --port 4000 --content-base dist/"
   },
   "keywords": [
     "cyclejs"
@@ -16,6 +17,7 @@
     "@cycle/core": "^6.0.0",
     "@cycle/dom": "^9.0.1",
     "@cycle/http": "^7.0.0",
+    "express-handlebars": "^2.0.1",
     "rx": "^4.0.7"
   },
   "devDependencies": {
